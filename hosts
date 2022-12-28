@@ -1,0 +1,8 @@
+[windows]
+win10 ansible_host=192.168.250.101    ansible_user=julio2  ansible_password=Sua Senha
+Windows2016 ansible_host=192.168.250.100  ansible_user=julio2 ansible_password=Sua Senha 
+[windows:vars]
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm

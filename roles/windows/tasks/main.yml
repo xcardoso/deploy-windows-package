@@ -1,0 +1,13 @@
+---
+- name: COPY | Copiando arquivo da sua máquina local para máquina remota
+  win_copy:
+    src: /home/julio/Downloads/googlechromestandaloneenterprise64.msi
+    dest: C:\temp\
+    
+- name: Install Google Chrome from msi with a permanent log
+  ansible.windows.win_package:
+    path: C:\temp\googlechromestandaloneenterprise64.msi
+    product_id: '{6EA4A09D-E0E2-358F-B54C-79106D2D2C95}'
+    state: present
+    #state: absent 
+    log_path: c:\temp\googlechromestandaloneenterprise64-{{lookup('pipe', 'date +%Y%m%dT%H%M%S')}}.log    
